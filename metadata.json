@@ -1,0 +1,5 @@
+{
+  "name": "Social Media Content Validator",
+  "description": "An application that uses Gemini to analyze social media content (videos, posts) to determine if it's AI-generated or real. Users can provide a URL, a description, and upload screenshots for a comprehensive analysis using visual inspection and web fact-checking.",
+  "requestFramePermissions": []
+}
