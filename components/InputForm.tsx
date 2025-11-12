@@ -81,7 +81,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onAnalyze, disabled }) => 
           onChange={(e) => setDescription(e.target.value)}
           rows={3}
           required
-          placeholder="e.g., 'A video showing a politician giving a speech with an unusual background...'"
+          placeholder="Is this authentic? Describe the content here..."
           className="w-full bg-gray-900/50 border border-gray-600 rounded-lg px-3 py-2 text-white focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition"
         />
       </div>

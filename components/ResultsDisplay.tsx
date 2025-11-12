@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import type { AnalysisResult, AnalysisStep } from '../types';
 import { CheckCircleIcon, ShieldCheckIcon, XCircleIcon, ArrowPathIcon, InformationCircleIcon, ClipboardDocumentIcon } from './icons';
@@ -61,10 +60,10 @@ const ResultDetails: React.FC<{ result: AnalysisResult }> = ({ result }) => {
 
   const handleCopy = () => {
     const reportToCopy = `
-      ${result.full_report}
+      ${result.full_report || ''}
 
       ---
-      Methodology Note: ${result.methodology_note}
+      Methodology Note: ${result.methodology_note || ''}
     `;
     if (result.full_report) {
       navigator.clipboard.writeText(reportToCopy.trim());
@@ -79,7 +78,7 @@ const ResultDetails: React.FC<{ result: AnalysisResult }> = ({ result }) => {
         {icon}
         <div>
           <h2 className={`text-2xl font-bold ${textColor}`}>{result.verdict}</h2>
-          <p className={`text-sm ${textColor.replace('400', '500')}`}>Prediction Confidence: {Math.round(result.confidence * 100)}%</p>
+          <p className={`text-sm ${textColor.replace('400', '500')}`}>Prediction Confidence: {Math.round((result.confidence || 0) * 100)}%</p>
         </div>
       </div>
 
@@ -90,7 +89,7 @@ const ResultDetails: React.FC<{ result: AnalysisResult }> = ({ result }) => {
              <div
                 className="whitespace-pre-wrap leading-relaxed"
                 dangerouslySetInnerHTML={{
-                  __html: result.full_report
+                  __html: (result.full_report || '')
                     .replace(/### (.*)/g, '<h3 class="text-cyan-300 font-semibold mt-4 mb-2">$1</h3>')
                     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
                 }}

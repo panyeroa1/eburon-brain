@@ -35,7 +35,7 @@ const App: React.FC = () => {
     setCurrentView('analysis');
 
     try {
-      const results = await orchestrateAnalysis(description, imageFile, transcript, (step) => {
+      const results = await orchestrateAnalysis(url, description, imageFile, transcript, (step) => {
         setAnalysisSteps(prev => [...prev, step]);
       });
       setAnalysisResult(results);
