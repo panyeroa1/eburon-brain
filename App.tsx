@@ -125,7 +125,7 @@ const App: React.FC = () => {
         </aside>
       </div>
       <footer className="text-center mt-8 text-gray-500 text-sm">
-        <p>Powered by Google Gemini. Analysis may not be 100% accurate.</p>
+        <p>Powered by Eburon AI. Analysis may not be 100% accurate.</p>
       </footer>
     </div>
   );
